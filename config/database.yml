@@ -1,0 +1,19 @@
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
+
+development:
+  <<: *connection
+  database: notetaker_development
+
+test:
+  <<: *connection
+  database: notetaker_test
+
+production:
+  <<: *connection
+  database: notetaker_production
