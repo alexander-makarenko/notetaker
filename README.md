@@ -11,7 +11,8 @@ A simple Ruby on Rails 4 application for taking notes.
 - the ability to create, view, edit and delete notes;
 - the ability to format the description of a note with [Markdown](https://guides.github.com/features/mastering-markdown/#what);
 - the ability to attach files to notes (via *Paperclip*);
-- *Amazon S3* for storing note attachments in production.
+- the ability to download attachments later;
+- *Amazon S3* for storing attachments in production.
 
 ## Live demo
 
