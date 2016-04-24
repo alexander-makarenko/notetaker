@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).on('page:change', function() {
+
+  // activate tooltips
+  $('[rel~=tooltip]').tooltip();
+
+  // hide the flash after 3 seconds unless it's a warning
+  setTimeout(function(){
+    $('.alert:not(.alert-danger)').slideUp(400, function() {
+      $(this).remove();
+    });
+  }, 4000);
+});

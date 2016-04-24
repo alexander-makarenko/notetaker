@@ -1,0 +1,18 @@
+= render 'shared/validation_errors', obj: @password_change
+
+.row.with-actions
+  .col-xs-6
+    %h2 Change password
+  .col.xs-6.actions
+    %span
+
+= bootstrap_form_for @password_change, inline_errors: false, layout: :horizontal, label_col: "col-sm-4", control_col: "col-sm-6", html: { id: 'passwordChange', class: 'center-block' } do |f|
+  = f.password_field :current_password, label: 'Current password'
+  = f.password_field :new_password, label: 'New password'
+  = f.password_field :new_password_confirmation, label: 'Confirmation'
+  .form-group
+    .col-sm-4.hidden-xs
+    .col-sm-6
+      .pull-right
+        = link_to 'Cancel', account_path, class: 'btn btn-default'
+        = f.primary 'Save'

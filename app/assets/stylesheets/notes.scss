@@ -1,0 +1,63 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#notesTable {
+  th, td {
+    vertical-align: middle;
+  }
+  thead th, td:not(:first-child) {
+    text-align: center;
+  }
+  th:not(:first-child), td:not(:first-child) {
+    width:1%;
+    white-space:nowrap;
+  }
+}
+
+#notesTable a, #editNoteForm a:nth-child(2) {
+  color: $gray-light;
+  &:hover, &:active {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+}
+
+#editNoteForm #attachments-existing {
+  padding-top: 7px;
+}
+
+#noteDetails .note {
+  .title h2 {
+    margin: 5px 0;
+  }
+  .description {
+    padding-bottom: 0;
+    h1 {
+      margin: 20px 0 15px;
+      &:first-child {
+        margin-top: 5px;
+      }
+    }
+    h2 {
+      margin: 15px 0 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    h3 {
+      margin: 10px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .attachments {
+    span {
+      padding-right: 5px;
+    }
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.btn-group
+  %span.btn.btn-default.btn-file{ type: 'button'}
+    = button_name
+    = label_tag :attachments, 'Attach files', class: 'sr-only'
+    = file_field_tag 'note[attachments][]', multiple: true
+  %button.btn.btn-default.dropdown-toggle{ type: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false }
+    %span.caret
+    %span.sr-only Toggle Dropdown
+  %ul.dropdown-menu#attachments-selected
+    %li.disabled= link_to 'No files selected', '#'

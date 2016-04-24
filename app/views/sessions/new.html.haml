@@ -1,0 +1,18 @@
+.row.with-actions
+  .col-xs-6
+    %h2 Log in
+  .col.xs-6.actions
+    %span
+      = link_to 'Sign up', signup_path
+
+= bootstrap_form_tag url: login_path, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-6", html: { id: 'loginForm', class: 'center-block' } do |f|
+  
+  = f.text_field :login, label: 'Login'
+  = f.password_field :password, label: 'Password'
+
+  .form-group
+    .col-sm-3.hidden-xs
+    .col-sm-6
+      = f.check_box :keep_signed_in, label: 'Keep me signed in', inline: true
+      .pull-right
+        = f.primary 'Log in'

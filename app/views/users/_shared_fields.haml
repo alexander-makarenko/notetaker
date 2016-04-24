@@ -1,0 +1,6 @@
+= f.text_field :login, label: 'Login'
+= f.text_field :firstname, label: 'First name'
+= f.text_field :lastname, label: 'Last name'
+= f.text_field :email, label: 'Email'
+= f.date_select :birthdate, label: 'Date of birth', include_blank: true, start_year: 1920, end_year: 2016, order: [:month, :day, :year]
+= f.text_field :phone, label: 'Phone'

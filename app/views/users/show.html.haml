@@ -1,0 +1,26 @@
+.row.with-actions
+  .col-xs-6
+    %h2 Account
+  .col-xs-6.actions
+    %span
+      = link_to 'Edit', account_edit_path
+      = link_to 'Change password', new_password_change_path
+
+#accountInfo.center-block.panel.panel-default  
+  %table.table.table-bordered.table-hover
+    %tbody
+      %tr
+        %th.text-right Login
+        %td= @user.login
+      %tr
+        %th.text-right Name
+        %td= @user.name
+      %tr
+        %th.text-right Email
+        %td= @user.email
+      %tr
+        %th.text-right Date of birth
+        %td= @user.birthdate.localtime.strftime("%B %-d %Y")
+      %tr
+        %th.text-right Phone
+        %td= @user.phone

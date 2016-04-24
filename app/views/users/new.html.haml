@@ -1,0 +1,18 @@
+= render 'shared/validation_errors', obj: @user
+
+.row.with-actions
+  .col-xs-6
+    %h2 Sign up
+  .col.xs-6.actions
+    %span
+      = link_to 'Log in', login_path
+
+= bootstrap_form_for @user, url: signup_path, inline_errors: false, layout: :horizontal, label_col: "col-sm-3 col-md-4", control_col: "col-sm-6 col-md-4", html: { id: 'signupForm', class: 'center-block' } do |f|
+  = render 'users/shared_fields', f: f
+  = f.password_field :password, label: 'Password'
+  = f.password_field :password_confirmation, label: 'Confirm password'
+  .form-group
+    .col-sm-3.col-md-4.hidden-xs
+    .col-sm-6.col-md-4
+      .pull-right
+        = f.primary 'Sign up'

@@ -1,0 +1,21 @@
+.row.with-actions
+  .col-xs-6
+    %h2 Notes
+  .col-xs-6.actions
+    %span
+      = link_to 'Add', new_note_path
+
+- if @notes.present?
+  #notesTable.panel.panel-default
+    %table.table.table-bordered.table-hover.table-striped
+      %thead
+        %tr
+          %th Title
+          %th Modified on
+          %th Attachments
+          %th Actions
+      %tbody
+        = render @notes
+
+.text-center
+  = will_paginate @notes

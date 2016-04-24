@@ -1,0 +1,17 @@
+= render 'shared/validation_errors', obj: @user
+
+.row.with-actions
+  .col-xs-6
+    %h2 Account settings
+  .col.xs-6.actions
+    %span
+      = link_to 'Change password', new_password_change_path
+
+= bootstrap_form_for @user, url: account_path, inline_errors: false, layout: :horizontal, label_col: "col-sm-3 col-md-4", control_col: "col-sm-6 col-md-4", html: { id: 'accountEdit', class: 'center-block' } do |f|
+  = render 'users/shared_fields', f: f
+  .form-group
+    .col-sm-3.col-md-4.hidden-xs
+    .col-sm-6.col-md-4
+      .pull-right
+        = link_to 'Cancel', account_path, class: 'btn btn-default'
+        = f.primary 'Save'

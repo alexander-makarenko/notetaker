@@ -1,0 +1,4 @@
+:plain
+  $("#note_#{@note.id}").addClass('danger').fadeOut(1000, function() {
+    $(this).remove();
+  });

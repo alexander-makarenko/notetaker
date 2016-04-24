@@ -1,0 +1,21 @@
+.row.with-actions
+  .col-xs-6
+    %h2 View note
+  .col-xs-6.actions
+    %span
+      = link_to 'Edit', edit_note_path(@note)
+      = link_to 'All notes', notes_path
+
+#noteDetails.row
+  .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+    .list-group.panel.note
+      .list-group-item.title
+        %h2.list-group-item-heading= @note.title
+      .list-group-item.description
+        .list-group-item-text= @note.description.html_safe
+      - if @note.attachments.present?
+        .list-group-item.attachments
+          - @note.attachments.each do |attachment|
+            %p{ id: "attachment_#{attachment.id}" }
+              %span.glyphicon.glyphicon-paperclip
+              = link_to attachment.file_file_name, attachment_download_url(attachment.id)

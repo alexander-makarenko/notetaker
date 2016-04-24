@@ -1,23 +1,72 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activemodel:
+    attributes:
+      password_change:
+        current_password: "current password"
+        new_password: "new password"
+        new_password_confirmation: "confirmation"
+    errors:
+      models:
+        password_change:
+          attributes:
+            current_password:
+              invalid: "is incorrect"
+            new_password:
+              blank: "is required"
+              too_short: "must be at least %{count} characters long"
+            new_password_confirmation:
+              confirmation: "does not match the %{attribute}"
+  activerecord:    
+    attributes:
+      user:
+        login: "login"
+        firstname: "first name"
+        lastname: "last name"
+        email: "email"
+        birthdate: "date of birth"
+        phone: "phone"
+        password: "password"
+        password_confirmation: "confirmation"
+      note:
+        title: "title"
+        description: "description"
+        attachments: "attachment"
+      attachment:
+        file_content_type: "attachment"
+        file_file_size: "size"
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              blank: "is required"
+              too_short: "must be at least %{count} characters long"
+            firstname:
+              blank: "is required"
+            lastname:
+              blank: "is required"
+            email:
+              blank: "is required"
+            birthdate:
+              blank: "is required"
+            phone:
+              blank: "is required"
+            password:
+              blank: "is required"
+              invalid: "is incorrect"
+              too_short: "must be at least %{count} characters long"
+            password_confirmation:
+              blank: "is required"
+              confirmation: "does not match the %{attribute}"
+        note:
+          attributes:
+            title:
+              blank: "is required"
+            description:
+              blank: "is required"
+            attachments:
+              invalid: "is invalid: only images, videos and documents (PDF,
+                Microsoft Word/Excel and plain text files) are allowed; the file
+                size should not exceed 300 KB"
+  policies:
+    default: "Please log in to access this page"

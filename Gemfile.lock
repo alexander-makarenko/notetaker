@@ -6,26 +6,6 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
-  remote: git://github.com/jnicklas/capybara.git
-  revision: 4be1a3126c4fbf836561f2e2ce86f02dbdb8d1c0
-  specs:
-    capybara (2.8.0.dev)
-      addressable
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-
-GIT
-  remote: git://github.com/thoughtbot/capybara-webkit.git
-  revision: 0af3c34aa6d80581f59ceb8a5fb8fcb6d3e95dd9
-  specs:
-    capybara-webkit (1.10.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
-
-GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 523bd46c768226893f23889079a7aa9c73b57d68
   ref: 523bd46c768226893f23889079a7aa9c73b57d68
@@ -36,6 +16,12 @@ GIT
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+
+GIT
+  remote: git://github.com/vmg/redcarpet.git
+  revision: df1b85d77fc9c962237ca48b498395c40d012a52
+  specs:
+    redcarpet (3.3.4)
 
 GEM
   remote: https://rubygems.org/
@@ -75,7 +61,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.6)
       execjs
@@ -91,14 +76,12 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (0.0.10)
       will_paginate
+    bootstrap_form (2.3.0)
     builder (3.2.2)
-    childprocess (0.5.9)
-      ffi (~> 1.0, >= 1.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
-    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -107,32 +90,10 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
-    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
-    factory_girl (4.7.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.7.0)
-      factory_girl (~> 4.7.0)
-      railties (>= 3.0.0)
-    ffi (1.9.10)
-    formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    guard (2.13.0)
-      formatador (>= 0.2.4)
-      listen (>= 2.7, <= 4.0)
-      lumberjack (~> 1.0)
-      nenv (~> 0.1)
-      notiffany (~> 0.0)
-      pry (>= 0.9.12)
-      shellany (~> 0.0)
-      thor (>= 0.18.1)
-    guard-compat (1.2.1)
-    guard-rspec (4.6.5)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -155,34 +116,19 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     json_pure (1.8.3)
-    libnotify (0.9.1)
-      ffi (>= 1.0.11)
-    listen (3.0.6)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.10)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    nenv (0.3.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    notiffany (0.0.8)
-      nenv (~> 0.1)
-      shellany (~> 0.0)
     pg (0.18.4)
-    pry (0.10.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -216,33 +162,8 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
-    rb-fsevent (0.9.7)
-    rb-inotify (0.9.7)
-      ffi (>= 0.5.0)
-    rspec (3.4.0)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.4)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-mocks (3.4.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-rails (3.4.2)
-      actionpack (>= 3.0, < 4.3)
-      activesupport (>= 3.0, < 4.3)
-      railties (>= 3.0, < 4.3)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-      rspec-support (~> 3.4.0)
-    rspec-support (3.4.1)
     ruby_parser (3.8.1)
       sexp_processor (~> 4.1)
-    rubyzip (1.2.0)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -250,18 +171,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    selenium-webdriver (2.53.0)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.0)
-      websocket (~> 1.0)
     sexp_processor (4.7.0)
-    shellany (0.0.1)
-    show_me_the_cookies (3.1.0)
-      capybara (~> 2.0)
-    slop (3.6.0)
-    spring (1.7.1)
-    spring-commands-rspec (1.0.4)
-      spring (>= 0.9.1)
     sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -278,10 +188,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
-    websocket (1.2.3)
     will_paginate (3.1.0)
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -291,23 +198,16 @@ DEPENDENCIES
   bcrypt
   bootstrap-sass
   bootstrap-will_paginate
-  capybara!
-  capybara-webkit!
-  factory_girl_rails
-  guard-rspec
+  bootstrap_form
   haml-rails
   jquery-rails
-  libnotify
   paperclip!
   pg
   pundit!
   rails
   rails_12factor
-  rspec-rails
+  redcarpet!
   sass-rails
-  selenium-webdriver
-  show_me_the_cookies
-  spring-commands-rspec
   turbolinks
   uglifier
 

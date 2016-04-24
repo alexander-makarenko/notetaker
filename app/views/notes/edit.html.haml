@@ -1,0 +1,22 @@
+= render 'shared/validation_errors', obj: @note
+
+.row.with-actions
+  .col-xs-6
+    %h2 Edit note
+  .col.xs-6.actions
+    %span
+      = link_to 'All notes', notes_path
+
+= bootstrap_form_for @note, url: @note, inline_errors: false, layout: :horizontal, label_col: "col-sm-2 col-md-3", control_col: "col-sm-8 col-md-6", html: { id: 'editNoteForm', class: 'center-block', multipart: true } do |f|
+  = render 'notes/shared_fields', f: f
+  .form-group
+    %strong.control-label.col-sm-2.col-md-3 Attachments
+    .col-sm-8.col-md-6
+      = render 'notes/uploaded_attachments', note: @note
+      = render 'notes/file_selector', button_name: 'Add more files…'
+  .form-group
+    .col-sm-2.col-md-3.hidden-xs
+    .col-sm-8.col-md-6
+      .pull-right
+        = link_to 'Cancel', @note, class: 'btn btn-default'
+        = f.primary 'Save', 'data-submit': 'Uploading…'
