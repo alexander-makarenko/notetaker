@@ -3,20 +3,19 @@
 
 $(document).on('page:change', function() {
 
-  var $fileInput           = $('#note_attachments_');
-  var $fileSubmitButton    = $('[id$=NoteForm] :submit');
-  var $selectedAttachments = $('#attachments-selected');
+  var $fileSelect   = $('input:file');
+  var $submitButton = $('[id$=NoteForm] :submit');
+  var $fileList     = $('#file-list');
 
-  $fileInput.on('change', function() {
-    $selectedAttachments.empty();
-    var attachments = $fileInput[0].files;
-    for (var i = 0; i < attachments.length; i++)
-      $selectedAttachments.append('<li><a href="#">' + attachments[i].name + '</a></li>');
+  $fileSelect.on('change', function() {
+    var files = $fileSelect[0].files;
+    var fileNames = $.map(files, function(val) { return '"' + val.name + '"'; });
+    $fileList.val(fileNames.join(', '));
   });
 
-  $fileSubmitButton.on('click', function() {
-    var attachments = $fileInput[0].files;
-    if (attachments.length) { $(this).val($(this).data('submit')); }
+  $submitButton.on('click', function() {
+    var files = $fileSelect[0].files;
+    if (files.length) { $(this).val($(this).data('submit')); }
     $(this).attr('disabled', 'disabled');
     return true;
   });

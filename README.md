@@ -1,19 +1,25 @@
 ## About
 
-A simple Ruby on Rails 4 application for taking notes.
+A Rails 4 app for taking notes. Each note can have files attached, and its description can be formatted with [Markdown](https://guides.github.com/features/mastering-markdown/#what).
 
 ## Key features
 
 - a *Bootstrap*-based UI;
-- server-side validations;
-- authentication (based on *has_secure_password*);
-- authorization (based on *Pundit*);
-- the ability to create, view, edit and delete notes;
-- the ability to format the description of a note with [Markdown](https://guides.github.com/features/mastering-markdown/#what);
-- the ability to attach files to notes (via *Paperclip*);
-- the ability to download attachments later;
-- *Amazon S3* for storing attachments in production.
+- user account registration and editing;
+- authentication and authorization;
+- the ability to:
+  - create, view, edit and delete notes;
+  - format note descriptions with Markdown;
+  - have files attached to each note;
+  - download any of the attached files later.
+- the use of *Amazon S3* for storing attachments in production.
 
 ## Live demo
 
 See this project deployed and running at [https://notetaker-demo.herokuapp.com/](https://notetaker-demo.herokuapp.com/).
+
+### How to use
+
+1. Sign in with `john.doe` / `qwerty` or create your own account.
+
+2. Try adding, editing and removing notes.

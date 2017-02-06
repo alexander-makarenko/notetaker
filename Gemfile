@@ -17,8 +17,9 @@ gem 'pundit', github: 'elabs/pundit'
 gem 'paperclip', github: 'thoughtbot/paperclip', ref: '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'bootstrap-will_paginate'
 gem 'redcarpet', github: 'vmg/redcarpet'
+gem 'faker'
 
-group :production do  
+group :production do
   gem 'rails_12factor'
   gem 'aws-sdk'
 end

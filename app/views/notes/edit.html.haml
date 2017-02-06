@@ -12,8 +12,9 @@
   .form-group
     %strong.control-label.col-sm-2.col-md-3 Attachments
     .col-sm-8.col-md-6
-      = render 'notes/uploaded_attachments', note: @note
-      = render 'notes/file_selector', button_name: 'Add more files…'
+      - if @note.attachments.any?
+        = render 'notes/uploaded_attachments', note: @note
+      = render 'notes/file_selector'
   .form-group
     .col-sm-2.col-md-3.hidden-xs
     .col-sm-8.col-md-6

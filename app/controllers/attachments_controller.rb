@@ -3,7 +3,8 @@ class AttachmentsController < ApplicationController
     attachment = Attachment.find(params[:id])
     authorize attachment
     send_file(
-      Paperclip.io_adapters.for(attachment.file).path,      
+      Paperclip.io_adapters.for(attachment.file).path,
+      filename: attachment.file_file_name,
       type: attachment.file_content_type,
       disposition: :attachment
     )

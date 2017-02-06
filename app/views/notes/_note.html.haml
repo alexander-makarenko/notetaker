@@ -3,13 +3,13 @@
   %td.updated_at= note.updated_at.localtime.strftime('%b %-d %Y, %I:%M:%S %p')
   %td.attachments
     = note.attachments.count if note.attachments.present?
-  %td.actions
-    = link_to edit_note_path(note), rel: 'tooltip',
-    data: { 'original-title': 'Edit', 'delay': '{"show":"300"}' } do
-      %span.glyphicon.glyphicon-pencil
+  %td.actions    
     = link_to note, rel: 'tooltip',
-    data: { 'original-title': 'View', 'delay': '{"show":"300"}' } do
+    data: { 'original-title': 'View', 'delay': '{"show":"500"}' } do
       %span.glyphicon.glyphicon-eye-open
+    = link_to edit_note_path(note), rel: 'tooltip',
+    data: { 'original-title': 'Edit', 'delay': '{"show":"500"}' } do
+      %span.glyphicon.glyphicon-pencil
     = link_to note, method: :delete, remote: true, rel: 'tooltip',
-    data: { 'original-title': 'Remove', 'delay': '{"show":"300"}' } do
+    data: { 'original-title': 'Remove', 'delay': '{"show":"500"}' } do
       %span.glyphicon.glyphicon-remove

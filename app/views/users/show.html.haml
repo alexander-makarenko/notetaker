@@ -6,8 +6,8 @@
       = link_to 'Edit', account_edit_path
       = link_to 'Change password', new_password_change_path
 
-#accountInfo.center-block.panel.panel-default  
-  %table.table.table-bordered.table-hover
+#accountInfo.center-block.panel.panel-default
+  %table.table.table-bordered
     %tbody
       %tr
         %th.text-right Login
@@ -18,9 +18,3 @@
       %tr
         %th.text-right Email
         %td= @user.email
-      %tr
-        %th.text-right Date of birth
-        %td= @user.birthdate.localtime.strftime("%B %-d %Y")
-      %tr
-        %th.text-right Phone
-        %td= @user.phone

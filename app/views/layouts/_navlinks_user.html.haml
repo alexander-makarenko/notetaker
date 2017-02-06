@@ -1,17 +1,18 @@
 %li.dropdown
   = link_to '#', class: 'dropdown-toggle', id: 'accountDropdown', 'data-toggle': 'dropdown', role: 'button' do
     %span.glyphicon.glyphicon-user
-    = current_user.name
+    %strong
+      = current_user.name
     %span.caret
   %ul.dropdown-menu{ 'aria-labelledby': 'accountDropdown' }
+    %li
+      = link_to notes_path do
+        %span.glyphicon.glyphicon-list
+        Notes
     %li
       = link_to account_path do
         %span.glyphicon.glyphicon-home
         Account
-    %li
-      = link_to notes_path do
-        %span.glyphicon.glyphicon-list
-        Notes    
     %li
       = link_to logout_path, method: :delete do
         %span.glyphicon.glyphicon-log-out

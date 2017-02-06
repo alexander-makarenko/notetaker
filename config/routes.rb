@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'  
-  
-  get 'attachments/:id/download/' => 'attachments#download', as: 'attachment_download'
+  root 'static_pages#home'
 
   resources :notes do
-    resources :attachments, only: [:destroy]
+    resources :attachments, only: [:destroy] do
+      get 'download', on: :member
+    end
   end
 
   scope controller: :users do
     get  'signup'       => :new
     post 'signup'       => :create
-    get  'account'      => :show, as: 'account'    
+    get  'account'      => :show, as: 'account'
     get  'account/edit' => :edit, as: 'account_edit'
     patch 'account'     => :update
   end

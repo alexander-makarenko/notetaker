@@ -1,8 +1,8 @@
-#attachments-existing
+#attachments
   %ul.list-group
     - note.reload.attachments.each do |attachment|
       %li.list-group-item{ id: "attachment_#{attachment.id}" }
-        = link_to attachment.file_file_name, attachment_download_url(attachment.id)
+        = link_to attachment.file_file_name, download_note_attachment_url(note, attachment)
         = link_to note_attachment_path(note, attachment), method: :delete, remote: true do
           .pull-right
             %span.glyphicon.glyphicon-remove

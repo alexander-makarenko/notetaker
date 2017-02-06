@@ -41,8 +41,6 @@ class UsersController < ApplicationController
         :lastname,
         :login,
         :email,
-        :birthdate,
-        :phone,
         :password,
         :password_confirmation
       )

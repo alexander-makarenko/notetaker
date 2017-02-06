@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     authorize @note
     if @note.update_attributes(note_params)
-      redirect_to notes_path
+      redirect_to note_path(@note)
     else
       render :edit
     end

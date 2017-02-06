@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
 
   LOGIN_REGEX = /\A[-\w.]*\z/i # only letters, numbers, period, hyphen, underscore
   EMAIL_REGEX = /\A[\w+-]+(\.[\w-]+)*@[a-z\d-]+(\.[a-z\d-]+)*(\.[a-z]{2,4})\z/i
-  PHONE_REGEX = /\d{3}/
 
   validates :firstname, presence: true, length: { maximum: 30 }
   validates :lastname,  presence: true, length: { maximum: 30 }
@@ -19,9 +18,6 @@ class User < ActiveRecord::Base
   validates :email,     presence: true, length: { maximum: 50 },
                         uniqueness: { case_sensitive: false }
   validates :email,     format: { with: EMAIL_REGEX }, if: -> { email.present? }
-  validates :birthdate, presence: true
-  validates :phone,     presence: true
-  validates :phone,     format: { with: PHONE_REGEX }, if: -> { phone.present? }
   validates :password,  presence: true, unless: :skip_password_validation
   validates :password,  length: { in: 6..30 }, if: -> { password.present? }
 

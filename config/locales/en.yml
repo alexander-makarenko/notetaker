@@ -16,15 +16,13 @@ en:
               too_short: "must be at least %{count} characters long"
             new_password_confirmation:
               confirmation: "does not match the %{attribute}"
-  activerecord:    
+  activerecord:
     attributes:
       user:
         login: "login"
         firstname: "first name"
         lastname: "last name"
         email: "email"
-        birthdate: "date of birth"
-        phone: "phone"
         password: "password"
         password_confirmation: "confirmation"
       note:
@@ -47,10 +45,6 @@ en:
               blank: "is required"
             email:
               blank: "is required"
-            birthdate:
-              blank: "is required"
-            phone:
-              blank: "is required"
             password:
               blank: "is required"
               invalid: "is incorrect"
@@ -65,8 +59,8 @@ en:
             description:
               blank: "is required"
             attachments:
-              invalid: "is invalid: only images, videos and documents (PDF,
-                Microsoft Word/Excel and plain text files) are allowed; the file
-                size should not exceed 300 KB"
+              invalid: "is invalid: the file size should not exceed 300 KB; only
+                images, videos and documents (PDF, Microsoft Word/Excel and
+                plain text files) are allowed"
   policies:
     default: "Please log in to access this page"
